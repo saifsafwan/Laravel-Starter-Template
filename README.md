@@ -1,4 +1,4 @@
-# Starter Laravel Template
+# Laravel Starter Template
 
 This is my own version of Laravel starter template.
 
