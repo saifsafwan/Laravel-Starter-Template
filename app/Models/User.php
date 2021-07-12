@@ -46,10 +46,4 @@ class User extends Authenticatable
      * Relationship
      *
      */
-
-     public function links()
-     {
-         return $this->hasMany(Link::class);
-     }
-
 }

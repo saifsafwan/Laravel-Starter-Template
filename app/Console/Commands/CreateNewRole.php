@@ -13,7 +13,7 @@ class CreateNewRole extends Command
      *
      * @var string
      */
-    protected $signature = 'create:role';
+    protected $signature = 'create:role {--name=}';
 
     /**
      * The console command description.
@@ -39,8 +39,12 @@ class CreateNewRole extends Command
      */
     public function handle()
     {
-        $name = $this->ask('What is the role name?');
-        
+        $name = $this->option('name');
+
+        if ($name == null) {
+            $name = $this->ask('What is the role name?');
+        }
+
         Role::create(['name' => Str::slug($name)]);
 
         $headers = ['Role Name', 'Role Key'];
@@ -51,6 +55,5 @@ class CreateNewRole extends Command
 
         $this->info("Role : $name created");
         $this->table($headers, $data);
-        
     }
 }
