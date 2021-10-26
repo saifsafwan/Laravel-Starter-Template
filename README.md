@@ -21,6 +21,8 @@ cp .env.example .env            //configure your database
 
 php artisan key:generate
 
+php artisan migrate
+
 php artisan template:new        //will generate Admin and User role
 
 php artisan serve               //run your application
